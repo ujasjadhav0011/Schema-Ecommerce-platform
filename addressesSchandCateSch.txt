@@ -1,0 +1,80 @@
+//address schema
+
+const mongoose=require("mongoose");
+
+const AddressSchema= new mongoose.Schema((
+
+     fistName:{
+         type:String,
+         required:true,
+     },
+     lastName:{
+         type:String,
+         required:true,
+     },
+     streetAddress:{
+         type:String,
+         required:true,
+     },
+      city:{
+         type:String,
+         required:true,
+     },
+      state:{
+         type:String,
+         required:true,
+     },
+     zipCode:{
+         type:Number,
+         required:true,
+     },
+     user:{
+         type:mongoose.Schema.ObjectId,
+         ref:"users"
+     },
+     mobile:{
+         type:String,
+         required:true,
+     },
+
+})
+
+
+const Address=mongoose.model("addresses",AddressSchema);
+
+module.exports=Address;
+
+
+//category Schema
+
+const mongoose = require('mongoose');
+
+const categorySchema= new mongoose.Schema({
+ name:{
+   type:String,
+   required:true,
+   maxlength:50,
+   },
+   parentcategory:{
+   type:mongoose.Schema.Tye.ObjectId,
+   ref: 'category',
+   },
+   level:{
+   type:Numeber,
+   required: true,
+   },
+});
+
+const Category = mongoose.model('categories',categorySchema);
+
+module.exports = Category;
+
+//mens
+//cloth
+//kurtas
+
+
+
+
+
+     
